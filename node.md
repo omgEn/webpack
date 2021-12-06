@@ -18,20 +18,28 @@
 
 * npm i uglifyjs-webpack-plugin -D 压缩 js
 * npm install babel-loader @babel/core @babel/preset-env -D
-   将 es6,7 转换为 es5
-* npm install --save-dev @babel/plugin-proposal-decorators  识别装饰器
+  将 es6,7 转换为 es5
+* npm install --save-dev @babel/plugin-proposal-decorators 识别装饰器
 * npm install --save-dev @babel/plugin-transform-runtime
-  识别es7语法 *gen()
-  * npm install --save @babel/runtime
+  识别 es7 语法 \*gen()
+  - npm install --save @babel/runtime
 * npm install --save @babel/polyfill
-  高级语法识别，比如Array.includes
+  高级语法识别，比如 Array.includes
 * npm i eslint eslint-loader -D
-
+<!-- * npm i expose-loader -D -->
+* npm i jquery -D
+* npm i file-loader -D
+  默认在内部生成一张图片到 build 目录下，把生成的图片的名字返回回来
+* npm i url-loader -D
+  做一个限制，当图片小于多少 k 的时候，用 base64 转换，否则用 file-loader 产生真实的图片
+  base64 不会去加载 http 请求
+* npm i html-withimg-loader -D
+  可解析 html 的图片
 
 ## 官网
-* https://babeljs.io/
-* 
 
+- https://babeljs.io/
+-
 
 ## webpacl 可以进行 0 配置
 
@@ -46,6 +54,19 @@ webpack.config.js
 - npm run build -- --config webpack.config.js
   -- 表示参数
 - webpack-dev-server 开发服务 内存中的打包
+
+## 设置全局变量
+
+- expose-loader 暴露到 window 上
+- providePlugin 给每个人提供一个$
+
+* 引入 cdn 不打包的方式
+
+## webpack 打包图片
+
+- 在 js 中创建图片引入
+- 在 css 中引入 background
+- <img src>
 
 ## 快捷键
 
